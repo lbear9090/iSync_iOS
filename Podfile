@@ -6,5 +6,9 @@ target 'iSync' do
   use_frameworks!
 
   # Pods for iSync
-
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'ProgressHUD'
+  pod 'IQKeyboardManagerSwift'
+  pod 'iOS-Slide-Menu'
 end

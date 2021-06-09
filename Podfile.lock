@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: e23639c133528b0b4c3397928a241524664c0e3a
+PODS:
+  - Alamofire (5.4.3)
+  - iOS-Slide-Menu (1.5)
+  - IQKeyboardManagerSwift (6.5.6)
+  - ProgressHUD (13.6)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - iOS-Slide-Menu
+  - IQKeyboardManagerSwift
+  - ProgressHUD
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - iOS-Slide-Menu
+    - IQKeyboardManagerSwift
+    - ProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 0af1b049d1e4aca48d362ce8ad261454e906944d
 
 COCOAPODS: 1.10.1

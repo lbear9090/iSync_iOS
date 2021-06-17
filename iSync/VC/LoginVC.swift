@@ -21,10 +21,12 @@ class LoginVC: UIViewController {
     
     @IBAction func onSignin(_ sender: Any) {
         ProgressHUD.show("Login...", interaction: false)
-        AuthAPI.shared.login(email: tfEmail.text!, password: tfPW.text!) { (user) in
-            
+        AuthAPI.shared.login(email: tfEmail.text!, password: tfPW.text!) { (auth) in
+            ProgressHUD.showSuccess()
+            g_token = auth?.token
+            self.dismiss(animated: true, completion: nil)
         } onError: { (error) in
-            
+            ProgressHUD.showError(error)
         }
 
 

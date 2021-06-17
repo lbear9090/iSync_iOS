@@ -42,7 +42,11 @@ class AuthAPI: BaseAPI{
         ]
         
         postRequest(url: "login.php", param: param, token: false) { (response: AuthResult) in
-            onSuccess(response)
+            if(response.success == 1){
+                onSuccess(response)
+            }else{
+                onError(response.message)
+            }
         } onError: { (error) in
             onError(error?.message?[0] ?? "")
         }

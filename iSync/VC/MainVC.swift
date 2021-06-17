@@ -17,7 +17,7 @@ class MainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(!g_bLogin){
+        if(isEmpty(g_token)){
             performSegue(withIdentifier: "segueLogin", sender: nil)
         }
     }

@@ -26,9 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuVC")
         
-        SlideNavigationController.sharedInstance()?.enableShadow = true
         SlideNavigationController.sharedInstance().leftMenu = menuVC
         SlideNavigationController.sharedInstance().portraitSlideOffset = g_sizeScreen.width - 240
+        SlideNavigationController.sharedInstance()?.enableShadow = true
+        SlideNavigationController.sharedInstance()?.enableSwipeGesture = true
 
         return true
     }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0506D9D6267C2C340030BAFA /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9D5267C2C340030BAFA /* DataAPI.swift */; };
+		0506D9DA267C2F480030BAFA /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9D9267C2F480030BAFA /* Dashboard.swift */; };
+		0506D9DE267C30A00030BAFA /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9DD267C30A00030BAFA /* Snapshot.swift */; };
+		0506D9E3267C31280030BAFA /* DailyPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9E2267C31280030BAFA /* DailyPerformance.swift */; };
 		056DB1BE26653E0600FCCA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DB1BD26653E0600FCCA0D /* AppDelegate.swift */; };
 		056DB1C526653E0600FCCA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C326653E0600FCCA0D /* Main.storyboard */; };
 		056DB1C726653E0600FCCA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C626653E0600FCCA0D /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		029AB3899F8DE35BA421C89B /* Pods-iSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSync.debug.xcconfig"; path = "Target Support Files/Pods-iSync/Pods-iSync.debug.xcconfig"; sourceTree = "<group>"; };
+		0506D9D5267C2C340030BAFA /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
+		0506D9D9267C2F480030BAFA /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		0506D9DD267C30A00030BAFA /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		0506D9E2267C31280030BAFA /* DailyPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPerformance.swift; sourceTree = "<group>"; };
 		056DB1BA26653E0600FCCA0D /* iSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056DB1BD26653E0600FCCA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056DB1C426653E0600FCCA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 				059C16B826705299003B3D77 /* Model */,
 				059C16B526705275003B3D77 /* BaseAPI.swift */,
 				059C16BF2670611D003B3D77 /* AuthAPI.swift */,
+				0506D9D5267C2C340030BAFA /* DataAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -134,6 +143,9 @@
 			children = (
 				059C16B9267052D6003B3D77 /* APIError.swift */,
 				059C16BC26705F20003B3D77 /* AuthResult.swift */,
+				0506D9D9267C2F480030BAFA /* Dashboard.swift */,
+				0506D9DD267C30A00030BAFA /* Snapshot.swift */,
+				0506D9E2267C31280030BAFA /* DailyPerformance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,12 +285,16 @@
 				056DB1BE26653E0600FCCA0D /* AppDelegate.swift in Sources */,
 				059C16C02670611D003B3D77 /* AuthAPI.swift in Sources */,
 				059C1694266FE43F003B3D77 /* MenuVC.swift in Sources */,
+				0506D9D6267C2C340030BAFA /* DataAPI.swift in Sources */,
 				059C168D266FE411003B3D77 /* MainVC.swift in Sources */,
+				0506D9E3267C31280030BAFA /* DailyPerformance.swift in Sources */,
 				059C16AC266FEF59003B3D77 /* Global.swift in Sources */,
 				059C16B626705275003B3D77 /* BaseAPI.swift in Sources */,
 				059C1690266FE429003B3D77 /* LoginVC.swift in Sources */,
+				0506D9DA267C2F480030BAFA /* Dashboard.swift in Sources */,
 				059C16B326705264003B3D77 /* Extensions.swift in Sources */,
 				059C16BD26705F20003B3D77 /* AuthResult.swift in Sources */,
+				0506D9DE267C30A00030BAFA /* Snapshot.swift in Sources */,
 				059C16BA267052D6003B3D77 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

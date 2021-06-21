@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import iOS_Slide_Menu
 
 class MenuVC: UIViewController {
     
@@ -50,5 +50,6 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        SlideNavigationController.sharedInstance()?.toggleLeftMenu()
     }
 }

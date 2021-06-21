@@ -15,7 +15,7 @@ class BaseAPI{
         var header = ["Content-Type": "application/json",
                       "Accept": "*/*"] as HTTPHeaders
         if(token && !isEmpty(g_token)){
-            header["Authorization"] = "Bearer " + g_token!
+            header["Apitoken"] = "Bearer " + g_token!
         }
         let param = param
         let request = AF.request(url, method: .get, parameters: param, encoding: JSONEncoding.default, headers: header)
@@ -42,7 +42,7 @@ class BaseAPI{
         var header = ["Content-Type": "application/json",
                       "Accept": "*/*"] as HTTPHeaders
         if(token && !isEmpty(g_token)){
-            header["Authorization"] = "Bearer " + g_token!
+            header["Apitoken"] = "Bearer " + g_token!
         }
         let param = param
         let request = AF.request(url, method: .get, parameters: param, encoding: URLEncoding.default, headers: header)
@@ -74,7 +74,7 @@ class BaseAPI{
         var header = ["Content-Type": "application/json",
                       "Accept": "*/*"] as HTTPHeaders
         if(token && !isEmpty(g_token)){
-            header["Authorization"] = "Bearer " + g_token!
+            header["Apitoken"] = "Bearer " + g_token!
         }
         
         let param = param
@@ -103,7 +103,7 @@ class BaseAPI{
                       "Accept": "*/*"] as HTTPHeaders
         
         if(token && !isEmpty(g_token)){
-            header["Authorization"] = "Bearer " + g_token!
+            header["Apitoken"] = "Bearer " + g_token!
         }
         
         let param = param

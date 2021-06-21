@@ -7,8 +7,14 @@
 
 import UIKit
 import iOS_Slide_Menu
-class MainVC: UIViewController {
+import ProgressHUD
 
+class MainVC: UIViewController {
+    var dashboardData : Dashboard?
+    @IBOutlet weak var btnPeriod: UIButton!
+    @IBOutlet weak var lblTotalSales: UILabel!
+    var selectedPeriod = 0
+    let sPeriod = ["Day", "Week", "Month", "Year"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,12 +25,60 @@ class MainVC: UIViewController {
         super.viewWillAppear(animated)
         if(isEmpty(g_token)){
             performSegue(withIdentifier: "segueLogin", sender: nil)
+        }else{
+            getDashboard()
         }
     }
     @IBAction func onMenu(_ sender: Any) {
         SlideNavigationController.sharedInstance()?.toggleLeftMenu()
     }
     
+    func getDashboard(){
+        ProgressHUD.show("Loading data...", interaction: false)
+        DataAPI.shared.getDashboard { (dashboard) in
+            ProgressHUD.showSuccess()
+            self.dashboardData = dashboard
+            self.refreshData()
+        } onError: { (error) in
+            ProgressHUD.showError(error)
+        }
+    }
+    
+    @IBAction func onPeriod(_ sender: UIButton) {
+        let ac = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        for i in 0..<sPeriod.count{
+            let action = UIAlertAction(title: sPeriod[i], style: .default) { (action) in
+                self.btnPeriod.setTitle(self.sPeriod[i], for: .normal)
+                self.selectedPeriod = i
+                self.refreshData()
+            }
+            ac.addAction(action)
+        }
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac, animated: true, completion: nil)
+    }
+    
+    func refreshData(){
+        if let dbData = dashboardData{
+            switch selectedPeriod{
+            case 0:
+                lblTotalSales.text = dbData.sales.daily_sales
+                break
+            case 1:
+                lblTotalSales.text = dbData.sales.last_weekly_sales
+                break
+            case 2:
+                lblTotalSales.text = dbData.sales.monthly_sales
+                break
+            case 3:
+                lblTotalSales.text = dbData.sales.year_to_date_sales
+                break
+            default:
+                break;
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

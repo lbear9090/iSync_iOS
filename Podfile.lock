@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.4.3)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - iOS-Slide-Menu (1.5)
   - IQKeyboardManagerSwift (6.5.6)
   - ProgressHUD (13.6)
@@ -7,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - iOS-Slide-Menu
   - IQKeyboardManagerSwift
   - ProgressHUD
@@ -15,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - iOS-Slide-Menu
     - IQKeyboardManagerSwift
     - ProgressHUD
@@ -22,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 0af1b049d1e4aca48d362ce8ad261454e906944d
+PODFILE CHECKSUM: 80175ee47f7a5ba7b4784823bcce729514f0462b
 
 COCOAPODS: 1.10.1

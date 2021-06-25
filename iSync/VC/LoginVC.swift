@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
         AuthAPI.shared.login(email: tfEmail.text!, password: tfPW.text!) { (auth) in
             ProgressHUD.showSuccess()
             g_token = auth?.token
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController!.dismiss(animated: true, completion: nil)
         } onError: { (error) in
             ProgressHUD.showError(error)
         }

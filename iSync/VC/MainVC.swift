@@ -8,11 +8,15 @@
 import UIKit
 import iOS_Slide_Menu
 import ProgressHUD
+import Charts
 
 class MainVC: UIViewController {
-    var dashboardData : Dashboard?
     @IBOutlet weak var btnPeriod: UIButton!
     @IBOutlet weak var lblTotalSales: UILabel!
+    @IBOutlet weak var chartView: LineChartView!
+    
+    var dashboardData : Dashboard?
+    var snapshotData : Snapshot?
     var selectedPeriod = 0
     let sPeriod = ["Day", "Week", "Month", "Year"]
     override func viewDidLoad() {
@@ -34,11 +38,23 @@ class MainVC: UIViewController {
     }
     
     func getDashboard(){
-        ProgressHUD.show("Loading data...", interaction: false)
+        ProgressHUD.show("Loading dashboard...", interaction: false)
         DataAPI.shared.getDashboard { (dashboard) in
             ProgressHUD.showSuccess()
             self.dashboardData = dashboard
-            self.refreshData()
+            self.refreshDashboard()
+            self.getSnapshot()
+        } onError: { (error) in
+            ProgressHUD.showError(error)
+        }
+    }
+    
+    func getSnapshot(){
+        ProgressHUD.show("Loading snapshot...", interaction: false)
+        DataAPI.shared.getSnapshot { (snapshot) in
+            ProgressHUD.showSuccess()
+            self.snapshotData = snapshot
+            self.refreshSnapshot()
         } onError: { (error) in
             ProgressHUD.showError(error)
         }
@@ -50,7 +66,7 @@ class MainVC: UIViewController {
             let action = UIAlertAction(title: sPeriod[i], style: .default) { (action) in
                 self.btnPeriod.setTitle(self.sPeriod[i], for: .normal)
                 self.selectedPeriod = i
-                self.refreshData()
+                self.refreshDashboard()
             }
             ac.addAction(action)
         }
@@ -59,7 +75,7 @@ class MainVC: UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    func refreshData(){
+    func refreshDashboard(){
         if let dbData = dashboardData{
             switch selectedPeriod{
             case 0:
@@ -77,6 +93,12 @@ class MainVC: UIViewController {
             default:
                 break;
             }
+        }
+    }
+    
+    func refreshSnapshot(){
+        if let snapshot = snapshotData{
+            
         }
     }
     /*

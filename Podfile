@@ -11,4 +11,5 @@ target 'iSync' do
   pod 'ProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod 'iOS-Slide-Menu'
+  pod 'Charts'
 end

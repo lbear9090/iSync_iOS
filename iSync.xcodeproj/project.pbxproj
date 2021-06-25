@@ -15,6 +15,8 @@
 		056DB1C526653E0600FCCA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C326653E0600FCCA0D /* Main.storyboard */; };
 		056DB1C726653E0600FCCA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C626653E0600FCCA0D /* Assets.xcassets */; };
 		056DB1CA26653E0600FCCA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C826653E0600FCCA0D /* LaunchScreen.storyboard */; };
+		05952F832685838E00023DE8 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05952F822685838E00023DE8 /* SignupVC.swift */; };
+		05952F872685839A00023DE8 /* ForgotPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05952F862685839A00023DE8 /* ForgotPWVC.swift */; };
 		059C168D266FE411003B3D77 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C168C266FE411003B3D77 /* MainVC.swift */; };
 		059C1690266FE429003B3D77 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C168F266FE429003B3D77 /* LoginVC.swift */; };
 		059C1694266FE43F003B3D77 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C1693266FE43F003B3D77 /* MenuVC.swift */; };
@@ -40,6 +42,8 @@
 		056DB1C626653E0600FCCA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		056DB1C926653E0600FCCA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		056DB1CB26653E0600FCCA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05952F822685838E00023DE8 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		05952F862685839A00023DE8 /* ForgotPWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPWVC.swift; sourceTree = "<group>"; };
 		059C168C266FE411003B3D77 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		059C168F266FE429003B3D77 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		059C1693266FE43F003B3D77 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				059C168F266FE429003B3D77 /* LoginVC.swift */,
+				05952F822685838E00023DE8 /* SignupVC.swift */,
+				05952F862685839A00023DE8 /* ForgotPWVC.swift */,
 				059C1693266FE43F003B3D77 /* MenuVC.swift */,
 				059C168C266FE411003B3D77 /* MainVC.swift */,
 			);
@@ -289,8 +295,10 @@
 				059C168D266FE411003B3D77 /* MainVC.swift in Sources */,
 				0506D9E3267C31280030BAFA /* DailyPerformance.swift in Sources */,
 				059C16AC266FEF59003B3D77 /* Global.swift in Sources */,
+				05952F832685838E00023DE8 /* SignupVC.swift in Sources */,
 				059C16B626705275003B3D77 /* BaseAPI.swift in Sources */,
 				059C1690266FE429003B3D77 /* LoginVC.swift in Sources */,
+				05952F872685839A00023DE8 /* ForgotPWVC.swift in Sources */,
 				0506D9DA267C2F480030BAFA /* Dashboard.swift in Sources */,
 				059C16B326705264003B3D77 /* Extensions.swift in Sources */,
 				059C16BD26705F20003B3D77 /* AuthResult.swift in Sources */,

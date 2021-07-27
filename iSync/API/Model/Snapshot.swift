@@ -16,6 +16,6 @@ struct Snapshot : Codable{
 
 struct SnapshotData : Codable{
     var labels: [String]
-    var data: [Int]
+    var data: [Double]
 }
 

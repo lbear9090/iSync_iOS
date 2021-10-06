@@ -50,4 +50,46 @@ class DataAPI: BaseAPI{
             onError(error?.message?[0] ?? "")
         }
     }
+    
+    func getUserInfo(onSuccess: @escaping(_ data: UserData?) -> Void, onError: @escaping(_ errorMessage: String?) -> Void){
+
+        getRequest(url: "user-info.php", param: nil) { (response: UserData) in
+            if(response.success == 1){
+                onSuccess(response)
+            }else{
+                onError(response.message)
+            }
+        } onError: { (error) in
+            onError(error?.message?[0] ?? "")
+        }
+    }
+    
+    func getEmailTemplates(onSuccess: @escaping(_ data: EmailTemplate?) -> Void, onError: @escaping(_ errorMessage: String?) -> Void){
+        getRequest(url: "email-templates.php", param: nil) { (response: EmailTemplate) in
+            if(response.success == 1){
+                onSuccess(response)
+            }else{
+                onError(response.message)
+            }
+        } onError: { (error) in
+            onError(error?.message?[0] ?? "")
+        }
+    }
+    
+    func sendEmail(email: String, templateId: String, website: String, onSuccess: @escaping(_ data: EmailResult?) -> Void, onError: @escaping(_ errorMessage: String?) -> Void){
+        let param = ["email_to": email,
+                     "email_template": templateId,
+                     "website": website,
+            ]
+
+        postRequest(url: "send-affiliate-email.php", param: param) { (response: EmailResult) in
+            if(response.success == 1){
+                onSuccess(response)
+            }else{
+                onError(response.message)
+            }
+        } onError: { (error) in
+            onError(error?.message?[0] ?? "")
+        }
+    }
 }

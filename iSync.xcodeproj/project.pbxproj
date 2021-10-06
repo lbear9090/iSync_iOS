@@ -11,6 +11,11 @@
 		0506D9DA267C2F480030BAFA /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9D9267C2F480030BAFA /* Dashboard.swift */; };
 		0506D9DE267C30A00030BAFA /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9DD267C30A00030BAFA /* Snapshot.swift */; };
 		0506D9E3267C31280030BAFA /* DailyPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506D9E2267C31280030BAFA /* DailyPerformance.swift */; };
+		050D3AFA270CF17700A8651D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D3AF9270CF17700A8651D /* User.swift */; };
+		050D3AFE270D028000A8651D /* EmailTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D3AFD270D028000A8651D /* EmailTemplate.swift */; };
+		05194310270D33680058355E /* SendEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519430F270D33680058355E /* SendEmailVC.swift */; };
+		0564DE65270D5501009B2723 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564DE64270D5501009B2723 /* SettingsVC.swift */; };
+		0564DE68270D562C009B2723 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564DE67270D562C009B2723 /* MessageUI.framework */; };
 		056DB1BE26653E0600FCCA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DB1BD26653E0600FCCA0D /* AppDelegate.swift */; };
 		056DB1C526653E0600FCCA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C326653E0600FCCA0D /* Main.storyboard */; };
 		056DB1C726653E0600FCCA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C626653E0600FCCA0D /* Assets.xcassets */; };
@@ -36,6 +41,11 @@
 		0506D9D9267C2F480030BAFA /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		0506D9DD267C30A00030BAFA /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		0506D9E2267C31280030BAFA /* DailyPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPerformance.swift; sourceTree = "<group>"; };
+		050D3AF9270CF17700A8651D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		050D3AFD270D028000A8651D /* EmailTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTemplate.swift; sourceTree = "<group>"; };
+		0519430F270D33680058355E /* SendEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailVC.swift; sourceTree = "<group>"; };
+		0564DE64270D5501009B2723 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		0564DE67270D562C009B2723 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		056DB1BA26653E0600FCCA0D /* iSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056DB1BD26653E0600FCCA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056DB1C426653E0600FCCA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0564DE68270D562C009B2723 /* MessageUI.framework in Frameworks */,
 				2C124E5C9EA83376D1DB1112 /* Pods_iSync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +123,8 @@
 				05952F862685839A00023DE8 /* ForgotPWVC.swift */,
 				059C1693266FE43F003B3D77 /* MenuVC.swift */,
 				059C168C266FE411003B3D77 /* MainVC.swift */,
+				0519430F270D33680058355E /* SendEmailVC.swift */,
+				0564DE64270D5501009B2723 /* SettingsVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -151,6 +164,8 @@
 				059C16BC26705F20003B3D77 /* AuthResult.swift */,
 				0506D9D9267C2F480030BAFA /* Dashboard.swift */,
 				0506D9DD267C30A00030BAFA /* Snapshot.swift */,
+				050D3AFD270D028000A8651D /* EmailTemplate.swift */,
+				050D3AF9270CF17700A8651D /* User.swift */,
 				0506D9E2267C31280030BAFA /* DailyPerformance.swift */,
 			);
 			path = Model;
@@ -159,6 +174,7 @@
 		BD7A058C78F976EB2AA0C1B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0564DE67270D562C009B2723 /* MessageUI.framework */,
 				5E37D2D337243919151E944F /* Pods_iSync.framework */,
 			);
 			name = Frameworks;
@@ -293,6 +309,8 @@
 				059C1694266FE43F003B3D77 /* MenuVC.swift in Sources */,
 				0506D9D6267C2C340030BAFA /* DataAPI.swift in Sources */,
 				059C168D266FE411003B3D77 /* MainVC.swift in Sources */,
+				050D3AFE270D028000A8651D /* EmailTemplate.swift in Sources */,
+				05194310270D33680058355E /* SendEmailVC.swift in Sources */,
 				0506D9E3267C31280030BAFA /* DailyPerformance.swift in Sources */,
 				059C16AC266FEF59003B3D77 /* Global.swift in Sources */,
 				05952F832685838E00023DE8 /* SignupVC.swift in Sources */,
@@ -302,8 +320,10 @@
 				0506D9DA267C2F480030BAFA /* Dashboard.swift in Sources */,
 				059C16B326705264003B3D77 /* Extensions.swift in Sources */,
 				059C16BD26705F20003B3D77 /* AuthResult.swift in Sources */,
+				050D3AFA270CF17700A8651D /* User.swift in Sources */,
 				0506D9DE267C30A00030BAFA /* Snapshot.swift in Sources */,
 				059C16BA267052D6003B3D77 /* APIError.swift in Sources */,
+				0564DE65270D5501009B2723 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 477Q3XC7GP;
 				INFOPLIST_FILE = iSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,6 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 477Q3XC7GP;
 				INFOPLIST_FILE = iSync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

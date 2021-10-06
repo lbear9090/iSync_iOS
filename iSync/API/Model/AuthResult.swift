@@ -1,5 +1,5 @@
 //
-//  AuthUser.swift
+//  AuthResult.swift
 //  iSync
 //
 //  Created by Lucky on 06/08/21.

@@ -1,5 +1,5 @@
 //
-//  AuthUser.swift
+//  Dashboard.swift
 //  iSync
 //
 //  Created by Lucky on 06/08/21.

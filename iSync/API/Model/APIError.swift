@@ -1,5 +1,5 @@
 //
-//  AuthError.swift
+//  APIError.swift
 //  iSync
 //
 //  Created by Lucky on 11/18/20.

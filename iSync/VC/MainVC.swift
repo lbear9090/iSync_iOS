@@ -54,7 +54,29 @@ class MainVC: UIViewController {
         DataAPI.shared.getSnapshot { (snapshot) in
             ProgressHUD.showSuccess()
             self.snapshotData = snapshot
-            self.refreshSnapshot()
+            self.getUser()
+        } onError: { (error) in
+            ProgressHUD.showError(error)
+        }
+    }
+    
+    func getUser(){
+        ProgressHUD.show("Loading user information...", interaction: false)
+        DataAPI.shared.getUserInfo { (userData) in
+            ProgressHUD.showSuccess()
+            g_user = userData?.user
+            self.getEmailTemplates()
+        } onError: { (error) in
+            ProgressHUD.showError(error)
+        }
+    }
+    
+    func getEmailTemplates(){
+        ProgressHUD.show("Loading email templates...", interaction: false)
+        DataAPI.shared.getEmailTemplates { (emaildata) in
+            ProgressHUD.showSuccess()
+            g_emails = emaildata?.data
+            
         } onError: { (error) in
             ProgressHUD.showError(error)
         }

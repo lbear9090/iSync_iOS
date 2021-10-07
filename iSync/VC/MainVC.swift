@@ -13,8 +13,14 @@ import Charts
 class MainVC: UIViewController {
     @IBOutlet weak var btnPeriod: UIButton!
     @IBOutlet weak var lblTotalSales: UILabel!
-    @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var lblAP: UILabel!
+    @IBOutlet weak var lblPW: UILabel!
+    @IBOutlet weak var lblES: UILabel!
+    @IBOutlet weak var lblAPPro: UILabel!
+    @IBOutlet weak var lblPWPro: UILabel!
+    @IBOutlet weak var lblESPro: UILabel!
     
     var dashboardData : Dashboard?
     var snapshotData : Snapshot?
@@ -24,7 +30,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupLineChart()
+        setupChartViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,9 +124,32 @@ class MainVC: UIViewController {
             default:
                 break;
             }
+            
+            let nAP = 5
+            let nPW = 3
+            let nES = dbData.total_proposal_sent
+            
+            lblAP.text = "\(nAP)"
+            lblAPPro.text = String(format: "%.1f %%", Double(nAP) * 100.0 / Double(nAP + nPW + nES))
+            lblPW.text = "\(nPW)"
+            lblPWPro.text = String(format: "%.1f %%", Double(nPW) * 100.0 / Double(nAP + nPW + nES))
+            lblES.text = "\(nES)"
+            lblESPro.text = String(format: "%.1f %%", Double(nES) * 100.0 / Double(nAP + nPW + nES))
+            
+            let entries = [PieChartDataEntry(value: Double(nAP)), PieChartDataEntry(value: Double(nPW)), PieChartDataEntry(value: Double(nES))]
+            
+            let set = PieChartDataSet(entries: entries)
+            set.drawIconsEnabled = false
+            set.sliceSpace = 2
+            
+            set.colors = [ChartColorTemplates.colorFromString("#07EA83"), ChartColorTemplates.colorFromString("#2D7EFE"), ChartColorTemplates.colorFromString("#E20049")]
+            
+            let data = PieChartData(dataSet: set)
+            data.setDrawValues(false)
+            pieChartView.data = data
+            pieChartView.highlightValues(nil)
         }
     }
-    
     
     
     func refreshSnapshot(){
@@ -129,21 +158,27 @@ class MainVC: UIViewController {
         }
     }
     
-    func setupLineChart(){
-        chartView.chartDescription?.enabled = false
-        chartView.dragEnabled = false
-        chartView.setScaleEnabled(false)
-        chartView.pinchZoomEnabled = false
-        chartView.rightAxis.enabled = true
+    func setupChartViews(){
+        //Pie Chart
+        pieChartView.legend.enabled = false
+        pieChartView.drawHoleEnabled = true
+        pieChartView.holeColor = .clear
         
-        chartView.leftAxis.labelTextColor = .white
-        chartView.rightAxis.labelTextColor = .white
+        //Line Chart
+        lineChartView.chartDescription?.enabled = false
+        lineChartView.dragEnabled = false
+        lineChartView.setScaleEnabled(false)
+        lineChartView.pinchZoomEnabled = false
+        lineChartView.rightAxis.enabled = true
+        
+        lineChartView.leftAxis.labelTextColor = .white
+        lineChartView.rightAxis.labelTextColor = .white
 
-        chartView.xAxis.labelPosition = .bottom
-        chartView.xAxis.labelTextColor = ChartColorTemplates.colorFromString("#ff2B7EFE")
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.xAxis.labelTextColor = ChartColorTemplates.colorFromString("#2B7EFE")
         
-        chartView.legend.form = .line
-        chartView.legend.enabled = false
+        lineChartView.legend.form = .line
+        lineChartView.legend.enabled = false
     }
     
     func setLineChartData(snapshot: SnapshotData) {
@@ -158,7 +193,7 @@ class MainVC: UIViewController {
         setupLineChart(set1)
 
         let gradientColors = [ChartColorTemplates.colorFromString("#002B7EFE").cgColor,
-                              ChartColorTemplates.colorFromString("#ff2B7EFE").cgColor]
+                              ChartColorTemplates.colorFromString("#2B7EFE").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
 
         set1.fillAlpha = 1
@@ -167,9 +202,9 @@ class MainVC: UIViewController {
         set1.drawFilledEnabled = true
 
         let data = LineChartData(dataSet: set1)
-        chartView.data = data
+        lineChartView.data = data
         
-        chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, _) -> String in
+        lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, _) -> String in
             return snapshot.labels[Int(index)]
         })
     }
@@ -177,8 +212,8 @@ class MainVC: UIViewController {
     private func setupLineChart(_ dataSet: LineChartDataSet) {
 //        dataSet.lineDashLengths = [5, 2.5]
 //        dataSet.highlightLineDashLengths = [5, 2.5]
-        dataSet.setColor(ChartColorTemplates.colorFromString("#ff2B7EFE"))
-        dataSet.setCircleColor(ChartColorTemplates.colorFromString("#ff2B7EFE"))
+        dataSet.setColor(ChartColorTemplates.colorFromString("#2B7EFE"))
+        dataSet.setCircleColor(ChartColorTemplates.colorFromString("#2B7EFE"))
         dataSet.lineWidth = 1
         dataSet.circleRadius = 3
         dataSet.drawCircleHoleEnabled = false

@@ -488,8 +488,14 @@
                     <navigationItem key="navigationItem" id="1TY-Rz-EY3"/>
                     <connections>
                         <outlet property="btnPeriod" destination="yUW-fK-KLt" id="ER0-84-aaj"/>
-                        <outlet property="chartView" destination="U4i-4i-LLN" id="hre-uy-xuj"/>
+                        <outlet property="lblAP" destination="Adh-0s-tUG" id="P5s-6R-4Dm"/>
+                        <outlet property="lblAPPro" destination="Rgd-Id-swM" id="l2m-my-2J1"/>
+                        <outlet property="lblES" destination="oqR-Af-zgL" id="swu-cT-6Ga"/>
+                        <outlet property="lblESPro" destination="sfy-uS-Pwo" id="WJ4-rW-Md3"/>
+                        <outlet property="lblPW" destination="e81-8h-qW2" id="5VG-DW-pNl"/>
+                        <outlet property="lblPWPro" destination="6ks-lS-9ay" id="atA-Vr-MBL"/>
                         <outlet property="lblTotalSales" destination="MzX-J7-ByA" id="yND-ym-tUu"/>
+                        <outlet property="lineChartView" destination="U4i-4i-LLN" id="hre-uy-xuj"/>
                         <outlet property="pieChartView" destination="Lde-wd-dfT" id="92E-5g-4ue"/>
                         <segue destination="Bkk-LW-n7M" kind="presentation" identifier="segueLogin" id="WPI-fP-Xqj"/>
                     </connections>

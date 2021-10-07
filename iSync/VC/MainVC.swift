@@ -14,6 +14,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var btnPeriod: UIButton!
     @IBOutlet weak var lblTotalSales: UILabel!
     @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var pieChartView: PieChartView!
     
     var dashboardData : Dashboard?
     var snapshotData : Snapshot?
@@ -23,6 +24,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupLineChart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +57,7 @@ class MainVC: UIViewController {
             ProgressHUD.showSuccess()
             self.snapshotData = snapshot
             self.getUser()
+            self.refreshSnapshot()
         } onError: { (error) in
             ProgressHUD.showError(error)
         }
@@ -118,11 +121,73 @@ class MainVC: UIViewController {
         }
     }
     
+    
+    
     func refreshSnapshot(){
         if let snapshot = snapshotData{
-            
+            setLineChartData(snapshot: snapshot.snapshot)
         }
     }
+    
+    func setupLineChart(){
+        chartView.chartDescription?.enabled = false
+        chartView.dragEnabled = false
+        chartView.setScaleEnabled(false)
+        chartView.pinchZoomEnabled = false
+        chartView.rightAxis.enabled = true
+        
+        chartView.leftAxis.labelTextColor = .white
+        chartView.rightAxis.labelTextColor = .white
+
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.labelTextColor = ChartColorTemplates.colorFromString("#ff2B7EFE")
+        
+        chartView.legend.form = .line
+        chartView.legend.enabled = false
+    }
+    
+    func setLineChartData(snapshot: SnapshotData) {
+        let values = (0..<snapshot.data.count).map { (i) -> ChartDataEntry in
+            let val = Double(snapshot.data[i])
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+
+        let set1 = LineChartDataSet(entries: values)
+        set1.drawIconsEnabled = false
+        set1.valueTextColor = ChartColorTemplates.colorFromString("#002B7EFE")
+        setupLineChart(set1)
+
+        let gradientColors = [ChartColorTemplates.colorFromString("#002B7EFE").cgColor,
+                              ChartColorTemplates.colorFromString("#ff2B7EFE").cgColor]
+        let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
+
+        set1.fillAlpha = 1
+        
+        set1.fill = Fill(linearGradient: gradient, angle: 90)
+        set1.drawFilledEnabled = true
+
+        let data = LineChartData(dataSet: set1)
+        chartView.data = data
+        
+        chartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: { (index, _) -> String in
+            return snapshot.labels[Int(index)]
+        })
+    }
+
+    private func setupLineChart(_ dataSet: LineChartDataSet) {
+//        dataSet.lineDashLengths = [5, 2.5]
+//        dataSet.highlightLineDashLengths = [5, 2.5]
+        dataSet.setColor(ChartColorTemplates.colorFromString("#ff2B7EFE"))
+        dataSet.setCircleColor(ChartColorTemplates.colorFromString("#ff2B7EFE"))
+        dataSet.lineWidth = 1
+        dataSet.circleRadius = 3
+        dataSet.drawCircleHoleEnabled = false
+        dataSet.valueFont = .systemFont(ofSize: 9)
+//        dataSet.formLineDashLengths = [5, 2.5]
+        dataSet.formLineWidth = 1
+        dataSet.formSize = 15
+    }
+    
     /*
     // MARK: - Navigation
 

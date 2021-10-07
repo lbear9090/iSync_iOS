@@ -16,6 +16,7 @@
 		05194310270D33680058355E /* SendEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519430F270D33680058355E /* SendEmailVC.swift */; };
 		0564DE65270D5501009B2723 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564DE64270D5501009B2723 /* SettingsVC.swift */; };
 		0564DE68270D562C009B2723 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0564DE67270D562C009B2723 /* MessageUI.framework */; };
+		0564DE6E270DED40009B2723 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564DE6D270DED40009B2723 /* NotificationVC.swift */; };
 		056DB1BE26653E0600FCCA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DB1BD26653E0600FCCA0D /* AppDelegate.swift */; };
 		056DB1C526653E0600FCCA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C326653E0600FCCA0D /* Main.storyboard */; };
 		056DB1C726653E0600FCCA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056DB1C626653E0600FCCA0D /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		0519430F270D33680058355E /* SendEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailVC.swift; sourceTree = "<group>"; };
 		0564DE64270D5501009B2723 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		0564DE67270D562C009B2723 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0564DE6D270DED40009B2723 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		056DB1BA26653E0600FCCA0D /* iSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		056DB1BD26653E0600FCCA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056DB1C426653E0600FCCA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				059C168C266FE411003B3D77 /* MainVC.swift */,
 				0519430F270D33680058355E /* SendEmailVC.swift */,
 				0564DE64270D5501009B2723 /* SettingsVC.swift */,
+				0564DE6D270DED40009B2723 /* NotificationVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				0506D9DE267C30A00030BAFA /* Snapshot.swift in Sources */,
 				059C16BA267052D6003B3D77 /* APIError.swift in Sources */,
 				0564DE65270D5501009B2723 /* SettingsVC.swift in Sources */,
+				0564DE6E270DED40009B2723 /* NotificationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
